@@ -1,0 +1,11 @@
+version: '3.0' # Don't change this
+services:
+    kedro:
+        image: kedro_dev
+        volumes:
+            - ./kedro:/kedro
+        tty: true
+        command: >
+            bash -c "make lint
+            && make tests
+            && behave"
